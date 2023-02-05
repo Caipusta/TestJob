@@ -1,17 +1,17 @@
 package com.example.demo1;
 
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class HelloApplication {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         Scanner string = new Scanner(System.in);
         String Expression = string.nextLine();
         String [] strings = Expression.split(" ");
         /// Выбрасываем из калькулятора выражения имеющие больше двух операндов и одного опрератора
         if(strings.length != 3){
-            System.out.println("System error");
-            return;
+            throw new IOException();
         }
         //  System.out.println("Строка имеет не больше одного оператора и двух операндов");
         ///Проверяем есть ли строка математической опирацией
@@ -22,8 +22,7 @@ public class HelloApplication {
                 ///   System.out.println("Строка является математической опирацией");
                 break;
             } else if (i == 3){
-                System.out.println("System error");
-                return;
+                throw new IOException();
             }
         }
         int num1 = 0;
@@ -78,8 +77,7 @@ public class HelloApplication {
                                 c = roper.dif(num1, num2);
                                 rtransf.transf(c);
                             }else{
-                                System.out.println("System error");
-                                return;
+                                throw new IOException();
                             }
                         case "*":
                             c = roper.mult(num1, num2);
@@ -94,7 +92,7 @@ public class HelloApplication {
             }
         }
         if (num1 == 0) {
-            System.out.println("System error");
+            throw new IOException();
         }
     }
 }
