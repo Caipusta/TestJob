@@ -43,7 +43,6 @@ public class Main {
                     number1 = i+1;
                     int number2 = j+1;
                     Aryph aoper = new Aryph();
-                    String areturn;
                     // System.out.println("Ваше выражение содержит арабские цифры");
                     switch (sig[0]){
                         case "+":
@@ -71,7 +70,6 @@ public class Main {
         }
         ////// Если римские числа
         String [] rnum = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
-        String romanNumber;
         for(int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 if(Objects.equals(strings[0], rnum[i]) && Objects.equals(strings[2], rnum[j])) {
